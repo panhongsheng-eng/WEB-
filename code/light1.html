@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>灯泡</title>
+	</head>
+	<body>
+		<img id="image"  src="./image/light_off.gif" width="160"height="120"/><br/>
+		<input type="button" value="开关按钮" onclick="action()" />
+		<table style="text-align: left;">
+			<tr>
+				<td ><input type="text"  style="width: 500px;" id="time"wrap="irtual";/></td>
+			</tr>		
+		</table>
+		<script  type="text/javascript">	
+		//获取当前时间
+			function time(){
+				var date = new Date();
+				var a = date.getHours();
+				var b =date.getMinutes();
+				var c = date.getSeconds();
+				var d = date.getDate();
+				var e =  d+"日"+a+"时"+b+"分"+c+"秒";
+				return e;
+			}
+			var imgs=["./image/light_off.gif","./image/light_on.gif"];
+			var i = 0;
+			//点击事件变图案
+			function action(){	
+				document.getElementById("image").src = imgs[i];
+				if(i ==0){
+					i=0;
+					document.getElementById("time").value +=time()+'关灯 '; 	
+				}else{
+					i=1;
+					document.getElementById("time").value +=time()+'开灯 ';	
+				}
+			}	
+		</script>
+	</body>
+</html>
+
